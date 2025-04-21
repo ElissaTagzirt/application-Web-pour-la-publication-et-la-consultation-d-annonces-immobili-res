@@ -1,45 +1,59 @@
 # 🏠 Application Web de publication et de recherche d’annonces immobilières
 
 Ce projet a été réalisé dans le cadre du module **IGL (Ingénierie du Logiciel)** à l’**École Nationale Supérieure d’Informatique (ESI)**.  
-Il a pour objectif de concevoir et implémenter une **application Web complète** permettant la publication, la consultation et la recherche d’annonces immobilières (AI).
+L’objectif est de concevoir une **application web responsive** permettant à des utilisateurs de **publier, consulter et filtrer des annonces immobilières (AI)**, ainsi que de les enrichir à l’aide d’un administrateur via **web scraping** ou **flux RSS**.
 
 ---
 
-## 🎯 Objectifs principaux
+## 🎯 Fonctionnalités principales
 
-L’application permet à un utilisateur authentifié de :
+### 👤 Utilisateurs
 
-- 📝 Publier des annonces immobilières (vente, location, échange, vacances)
-- 🔍 Rechercher des biens par mots-clés dans le titre et la description
-- 🧰 Filtrer les résultats selon :
-  - Le type de bien
-  - La Wilaya
-  - La commune
-  - Une période de publication
-- 🖼️ Voir les détails d’une annonce (photos + localisation sur Google Maps)
-- ⭐ Sauvegarder des annonces favorites
-- ✉️ Envoyer un message à l’annonceur
-- 📋 Gérer ses propres annonces et consulter les offres reçues
+- Déposer une annonce (vente, location, échange, vacances)
+- Rechercher des biens par mots-clés dans le titre ou la description
+- Filtrer les résultats selon :
+  - Type du bien
+  - Wilaya / commune
+  - Période de publication
+- Visualiser les annonces avec :
+  - Galerie d’images
+  - Localisation sur Google Maps
+- Sauvegarder des annonces comme favorites
+- Envoyer un message à un annonceur
+- Gérer ses propres annonces et consulter les offres reçues
 
----
+### 🧑‍💼 Administrateur
 
-## 🧑‍💼 Fonctionnalités administrateur
-
-- 🔐 Authentification via un **compte Google (SSO)**
-- 🤖 Récupération automatisée d’annonces depuis d’autres sites via :
-  - **Web scraping**
-  - **Flux RSS**
+- Authentification sécurisée via **Google SSO**
+- Récupération automatique d’annonces depuis d’autres sites via :
+  - Web Scraping
+  - Flux RSS
 
 ---
 
 ## 🛠️ Technologies utilisées
 
-- 🐍 **Backend** : Python
-- ⚛️ **Frontend** : React
-- 🗄️ **Base de données** : SGBD relationnel (ex : PostgreSQL, MySQL)
-- 🔐 **Authentification** : Google SSO
-- 🧪 **Tests** :
-  - 3 tests unitaires
-  - 1 test fonctionnel automatisé (ex : avec Selenium)
-- 🚀 **Déploiement & gestion de version** : GitHub
+| Composant | Technologie |
+|----------|-------------|
+| **Backend** | [FastAPI](https://fastapi.tiangolo.com/) + [Uvicorn](https://www.uvicorn.org/) |
+| **Frontend** | [React.js](https://reactjs.org/) |
+| **Base de données** | SGBD relationnel (ex : PostgreSQL, MySQL) |
+| **Authentification** | Google OAuth 2.0 (SSO) |
+| **Web Scraping** | Python + BeautifulSoup |
+| **Tests** | 3 tests unitaires + 1 test fonctionnel (Selenium) |
+| **Modélisation** | Software Ideas Modeler |
+| **Éditeur** | Visual Studio Code|
+| **Environnement Python** | Anaconda |
+
+
+---
+
+## 🧪 Qualité et bonnes pratiques
+
+- 🔐 Aucune clé secrète n’est présente dans le code : les identifiants sont stockés via **variables d’environnement**
+- ✅ Tests automatisés (unitaires et fonctionnels)
+- 💡 Documentation générée automatiquement via FastAPI
+- 📱 Interface responsive adaptée aux mobiles et tablettes
+
+---
 
